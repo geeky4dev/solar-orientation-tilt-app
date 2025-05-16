@@ -24,12 +24,33 @@ Built with **React**, **Leaflet.js**, and **Flask**.
 | Leaflet.js     |              | OpenStreetMap (map tiles) |
 
 ---
+📂 Project Structure    
 
-
-
-
-
-
+solar-orientation-tilt-app/       # Root directory     
+├── backend/    
+│   └── venv       # Recommended to avoid conflicts    
+│   └── app.py     # Flask app    
+│   └── pvlib_logic.py    
+│   └── requirements.txt   
+├── frontend/    
+│   ├── public/  
+│   ├── src/  
+│   │   ├── components/  
+│   │        ├── Compass.jsx  
+│   │        └── Compass.css  
+│   │   ├── App.js  
+│   │   └── main.jsx  
+│   ├── package.json  
+├── README.md  
+---
+ 
+![Solar Optimizer 1](https://github.com/user-attachments/assets/3878015c-a4e3-48d0-8d87-2355dc909ab7)
+![Solar Optimizer 1 0](https://github.com/user-attachments/assets/e5a458a5-1a3c-458c-8a07-cc8a1310d69f)
+![Solar Optimizer 1 1](https://github.com/user-attachments/assets/8cde8f8e-57c4-44c1-85bc-c54af7033e69)
+![Solar Optimizer 2 0](https://github.com/user-attachments/assets/0770d745-e4fd-44ea-ada9-6653b0442520)
+![Solar Optimizer 2 1](https://github.com/user-attachments/assets/fa2d36c6-2b3f-4e13-803b-ea2d99a49fe2)
+---
+🚀 Development Step by Step 
 
 ---
 
