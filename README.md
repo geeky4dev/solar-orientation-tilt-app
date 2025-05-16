@@ -50,7 +50,7 @@ solar-orientation-tilt-app/       # Root directory
 ![Solar Optimizer 2 0](https://github.com/user-attachments/assets/0770d745-e4fd-44ea-ada9-6653b0442520)
 ![Solar Optimizer 2 1](https://github.com/user-attachments/assets/fa2d36c6-2b3f-4e13-803b-ea2d99a49fe2)
 ---
-🚀 Development Step by Step 
+##🚀 Development Step by Step 
 
 ---
 
