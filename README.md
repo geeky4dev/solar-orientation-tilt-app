@@ -68,8 +68,8 @@ solar-orientation-tilt-app/       # Root directory
 
 1. **Clone the repository:**  
    ```bash  
-   git clone https://github.com/your-username/solar-optimizer.git  
-   cd solar-optimizer/frontend  
+   git clone https://github.com/your-username/solar-orientation-tilt-app.git    
+   cd solar-orientation-tilt-app/frontend  
 2.Install dependencies:  
 npm install  
 
