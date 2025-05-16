@@ -92,7 +92,7 @@ pip install -r requirements.txt
 source venv/bin/activate  
 python3 app.py  
 
-5. Run Frontend  
+5.Run Frontend    
 cd frontend  
 npm start  
 
