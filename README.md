@@ -105,4 +105,8 @@ npm start
 ⚡ Click Calculate to get the optimal solar panel settings  
 🧭 View the results and see the arrow on the map indicating optimal azimuth  
 
-   
+...
+📜 License
+MIT License.
+
+Created by geeky4dev – feel free to fork, contribute, or star 🌟 the project!
