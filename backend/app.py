@@ -7,6 +7,10 @@ from pvlib_logic import get_optimal_tilt_azimuth
 app = Flask(__name__)
 CORS(app)
 
+@app.route("/")
+def home():
+    return "API solar backend running"
+
 @app.route("/api/optimize", methods=["POST"])
 def optimize():
     data = request.get_json()
