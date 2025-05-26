@@ -26,7 +26,6 @@ function createArrowIcon(azimuth = 0) {
   });
 }
 
-
 function LocationSelector({ onSelect }) {
   useMapEvents({
     click(e) {
@@ -42,11 +41,13 @@ function App() {
   const [result, setResult] = useState(null);
   const [season, setSeason] = useState('yearly');
 
+  const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+
   const handleSubmit = async () => {
     if (!location) return;
 
     try {
-      const res = await axios.post('http://localhost:5000/api/optimize', {
+      const res = await axios.post(`${API_URL}/api/optimize`, {
         latitude: location.lat,
         longitude: location.lng,
         season,
@@ -103,6 +104,7 @@ function App() {
 }
 
 export default App;
+
 
 
 
