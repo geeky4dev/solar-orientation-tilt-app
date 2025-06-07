@@ -40,8 +40,16 @@ function App() {
   const [location, setLocation] = useState(null);
   const [result, setResult] = useState(null);
   const [season, setSeason] = useState('yearly');
+  const [practicalTilt, setPracticalTilt] = useState(null);
 
   const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+
+  // Función para obtener inclinación práctica según latitud (ejemplo simple)
+  function getPracticalTilt(lat) {
+    if (lat >= 47 && lat <= 55) return 30; // Alemania approx.
+    // Agrega más reglas aquí...
+    return null;
+  }
 
   const handleSubmit = async () => {
     if (!location) return;
@@ -53,8 +61,11 @@ function App() {
         season,
       });
       setResult(res.data);
+
+      const tilt = getPracticalTilt(location.lat);
+      setPracticalTilt(tilt);
     } catch (error) {
-      console.error("Error fetching optimization data:", error);
+      console.error('Error fetching optimization data:', error);
     }
   };
 
@@ -75,11 +86,13 @@ function App() {
 
       {location && (
         <div>
-          <p>📍 Location: {location.lat.toFixed(4)}, {location.lng.toFixed(4)}</p>
+          <p>
+            📍 Location: {location.lat.toFixed(4)}, {location.lng.toFixed(4)}
+          </p>
           <label htmlFor="season-select">Season: </label>
           <select
             id="season-select"
-            onChange={e => setSeason(e.target.value)}
+            onChange={(e) => setSeason(e.target.value)}
             value={season}
           >
             <option value="yearly">Annual (*)</option>
@@ -94,9 +107,33 @@ function App() {
       {result && (
         <div>
           <h2>🔍 Results:</h2>
-          <p>📐 Optimal inclination: <strong>{result.optimal_tilt.toFixed(2)}°</strong></p>
-          <p>🧭 Optimal orientation (azimuth): <strong>{result.optimal_azimuth.toFixed(2)}°</strong></p>
+          <p>
+            📐 Optimal inclination (astronomical):{' '}
+            <strong>{result.optimal_tilt.toFixed(2)}°</strong>
+          </p>
+
+          {practicalTilt && (
+            <p>
+              ⚙️ Practical tilt recommendation for your location:{' '}
+              <strong>{practicalTilt}°</strong>
+            </p>
+          )}
+
+          <p>
+            🧭 Optimal orientation (azimuth):{' '}
+            <strong>{result.optimal_azimuth.toFixed(2)}°</strong>
+          </p>
+
           <Compass azimuth={result.optimal_azimuth} />
+
+          {practicalTilt && (
+            <p style={{ fontStyle: 'italic', marginTop: '10px', color: '#555' }}>
+              *Note: The practical tilt is a fixed recommended value used in real
+              installations to simplify setup and maintenance. The optimal
+              inclination is calculated astronómicamente para maximizar la producción
+              según estación y latitud.
+            </p>
+          )}
         </div>
       )}
     </div>
@@ -104,11 +141,3 @@ function App() {
 }
 
 export default App;
-
-
-
-
-
-
-
-
