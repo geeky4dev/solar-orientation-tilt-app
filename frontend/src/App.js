@@ -129,9 +129,8 @@ function App() {
           {practicalTilt && (
             <p style={{ fontStyle: 'italic', marginTop: '10px', color: '#555' }}>
               *Note: The practical tilt is a fixed recommended value used in real
-              installations to simplify setup and maintenance. The optimal
-              inclination is calculated astronómicamente para maximizar la producción
-              según estación y latitud.
+              installations to simplify setup and maintenance. The optimal inclination is 
+              astronomically calculated to maximize production based on season and latitude.
             </p>
           )}
         </div>
